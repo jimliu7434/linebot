@@ -1,0 +1,28 @@
+{
+  "name": "linebot",
+  "version": "1.0.0",
+  "description": "line bot ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimliu7434/linebot.git"
+  },
+  "keywords": [
+    "node.js",
+    "line",
+    "bot"
+  ],
+  "author": "jimliu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimliu7434/linebot/issues"
+  },
+  "homepage": "https://github.com/jimliu7434/linebot#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

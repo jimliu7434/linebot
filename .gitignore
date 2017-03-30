@@ -1,0 +1,3 @@
+node_modules/*
+config/channel.js
+npm-debug.log
