@@ -24,6 +24,7 @@ let eventHandler = event => {
                 ngame.userid = userid;
                 ngame.answer = '';
                 lobal.GAMES.push(ngame);
+            console.log(`${userid}  new user.`);
             rsptext = `plz type '--new' to start a new game.`;
         }
         else {
@@ -33,10 +34,17 @@ let eventHandler = event => {
                     case '--new':
                         game.answer = GAME_ANS(ANS_LENGTH);
                         rsptext = `New game is started.`;
-                        console.log(`${userid}  ${game.answer}`)
+                        console.log(`${userid}  ${game.answer}`);
+                        break;
+                    case '--listgames':
+                        rsptext = JSON.stringify(global.GAMES);
+                        break;
+                    case '--ans':
+                        rsptext = `answer is ${game.answer}`;
                         break;
                     default:
                         rsptext = `Unkown command.`;
+                        break;
                 }
             }
             else {
@@ -57,7 +65,7 @@ let eventHandler = event => {
                     if(req.length > ANS_LENGTH)
                         req = req.slice(0, ANS_LENGTH - 1);
 
-                    rsptext = GAME_CHECK(ans, req.join(''));
+                    rsptext = `${req.join('')} :  ${GAME_CHECK(ans, req.join(''))}`;
                 }
             }
         }
