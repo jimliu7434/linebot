@@ -34,18 +34,21 @@ let eventHandler = event => {
                         game.answer = GAME_ANS(ANS_LENGTH);
                     }
 
-                    rsptext = `New game is started.`;
-                    console.log(`${userid}  ${game.answer}`);
+                    rsptext = `New game started.`;
                     break;
-                case '--games':
+                case '--listgames':
                     rsptext = JSON.stringify(global.GAMES);
+                    break;
+                case '--cleargames':
+                    global.GAMES = [];
+                    rsptext = `game cleared.`;
                     break;
                 case '--ans':
                     if (!game) {
-                        rsptext = `answer is `;
+                        rsptext = `No answer.`;
                     }
                     else {
-                        rsptext = `answer is ${game.answer}`;
+                        rsptext = `Answer  ${game.answer}`;
                     }
                     break;
                 default:
@@ -56,7 +59,7 @@ let eventHandler = event => {
         else {
             // game mode
             if (!game) {
-                rsptext = `plz type '--new' to init game.`;
+                rsptext = `Type '--new' to init game.`;
             }
             else {
                 let ans = game.answer,
