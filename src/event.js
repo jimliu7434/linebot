@@ -23,7 +23,7 @@ let eventHandler = event => {
             let ngame = GAME();
                 ngame.userid = userid;
                 ngame.answer = '';
-                lobal.GAMES.push(ngame);
+                global.GAMES.push(ngame);
             console.log(`${userid}  new user.`);
             rsptext = `plz type '--new' to start a new game.`;
         }
