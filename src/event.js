@@ -28,7 +28,7 @@ let eventHandler = event => {
             rsptext = `plz type '--new' to start a new game.`;
         }
         else {
-            if(msgtext.StartsWith('--')){
+            if(msgtext.startsWith('--')){
                 // cmd mode
                 switch(msgtext) {
                     case '--new':
