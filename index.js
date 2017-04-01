@@ -8,17 +8,19 @@ const
         channelAccessToken: channel.token,
     }),
     app = express(),
-    linebotParser = bot.parser();
+    linebotParser = bot.parser(),
+    eventHandler = require('./src/event');
 
 
 bot.on('message', event => {
     console.log(event);
+    eventHandler(event);
 });
 
 app.post('/', linebotParser);
 
 var server = app.listen(process.env.PORT || 8080,
     () => {
-        console.log(bot);
-        console.log(`App is now running on ${server.address().port}`)
+        console.log(`App is now running on ${server.address().port}`);
+        global.GAMES = [];
     });
