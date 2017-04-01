@@ -1,7 +1,4 @@
 var c = (ans, gues) => {
-    if(ans.length !== gues.length)
-        return 'error';
-
     let a=0,
         b=0;
     
@@ -18,7 +15,7 @@ var c = (ans, gues) => {
         }
     }
 
-    return `${a}A${b}B`;
+    return {a: a, b: b};
 };
 
 module.exports = c;

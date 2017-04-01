@@ -4,7 +4,6 @@ var a = (maxleng) => {
 
     do {
         let numIndex = getRandom(0, arr.length - 1);
-        console.log(`chosed ${arr[numIndex]}`);
         if(!ans.find( a=> a === arr[numIndex] )){
             ans.push(arr[numIndex]);
         }

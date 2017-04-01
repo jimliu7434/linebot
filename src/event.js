@@ -74,8 +74,10 @@ let eventHandler = event => {
                 else {
                     if (req.length > ANS_LENGTH)
                         req = req.slice(0, ANS_LENGTH - 1);
+                    
+                    let rsp = GAME_CHECK(ans, req.join(''));
 
-                    rsptext = `${req.join('')} :  ${GAME_CHECK(ans, req.join(''))}`;
+                    rsptext = `${req.join('')} : ${rsp.a}A${rsp.b}B  ${rsp.a === ANS_LENGTH ? 'Correct!' : ''}`;
                 }
             }
         }
